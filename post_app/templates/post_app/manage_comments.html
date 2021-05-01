@@ -1,0 +1,39 @@
+{% extends 'menu_admin.html' %}
+
+    {% block title %}  ANTENADO - Admin {% endblock title %}
+
+    {% block models %}
+
+        <div class="ContainerNTC">
+
+            <div class="cabecalho_admin">
+                <h2>Comentários Cadastrados: <span> {{ comentarios | length }} </span></h2>
+                <a href="{% url 'add_comment' %}">
+                    <input type="button" value="Adicionar" class="btn_add_news">
+                </a>
+            </div>
+
+            <table id="ListAdm">
+                <tr id="colunas">
+                    <th>Comentário</th>
+                    <th>Author</th>
+                    <th>Data/Hora</th>
+                    <th>Notícia</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+
+                {% for comentario in comentarios %}
+                <tr>
+                    <td id="detailNotice"><a href="{% url 'detail_comment' comentario.pk %}" >{{ comentario.opiniao }}</a></td>
+                    <td>{{ comentario.cod_usuario }}</td>
+                    <td>{{ comentario.timestamp }}</td>
+                    <td>{{ comentario.cod_noticia }}</td>
+                    <td><a href="{% url 'edit_comment' comentario.pk %}" id="btnEditar">Editar</a></td>
+                    <td><a href="{% url 'delete_comment' comentario.pk %}" id="btnExcluir" >Excluir</a></td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endblock models %}

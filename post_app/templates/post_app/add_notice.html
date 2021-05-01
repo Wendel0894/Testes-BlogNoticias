@@ -1,0 +1,14 @@
+{% extends 'menu_admin.html' %}
+
+    {% block title %} ANTENADO - Adicionar Noticia {% endblock title %}
+
+    {% block models %}
+        <div class="add">
+            <h1>Adicionar Notícia</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+            <input type="submit" value="Adicionar" id="btn_form"/>
+        </form>
+        </div>
+    {% endblock models %}

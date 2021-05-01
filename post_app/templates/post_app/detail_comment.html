@@ -1,0 +1,18 @@
+{% extends 'menu_admin.html' %}
+
+    {% block title %} ANTENADO - Comentário {% endblock title %}
+
+    {% block models %}
+
+        <div id="cabecalho_notice">
+            <h2> {{ comentario.opiniao }} </h2>
+            <h3>Comentário feito por {{ comentario.cod_usuario }} em {{ comentario.timestamp }} na notícia "{{ comentario.cod_noticia }}"</h3>
+        </div>
+
+        <div id="editOrDelNotice">
+            <a href="{% url 'edit_comment' comentario.pk %}" id="btnEditar">Editar</a>
+            <a href="{% url 'delete_comment' comentario.pk %}" id="btnExcluir">Excluir</a>
+        </div>
+
+
+    {% endblock models %}

@@ -1,0 +1,36 @@
+{% extends 'menu.html' %}
+
+     {% block title %} Antenado - Esportes {% endblock title %}
+
+     {% block content %}
+        <div class="containerPrincipal">
+            <div id="Containernoticias">
+
+                <h2>Noticias</h2>
+
+                {% for noticia in notices_list %}
+                    {% if noticia.assunto == 'Esportes' %}
+                        <div id="noticia">
+                            <div id="imgNotice">
+                                {% if noticia.header_image %}
+                                    <img src="{{ noticia.header_image.url }}" alt="ImageNoticia">
+                                {% else %}
+                                    img
+                                {% endif %}
+                            </div>
+                            <div id="detalhesNotice">
+
+                                    <a href="{% url 'visualizar_noticia' noticia.pk %}">
+                                        <h2>{{ noticia.titulo }}</h2>
+                                    </a>
+
+                                    <h4>{{ noticia.assunto }} - {{ noticia.timestamp }}</h4>
+                            </div>
+                        </div>
+                        <hr/>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    {% endblock content %}

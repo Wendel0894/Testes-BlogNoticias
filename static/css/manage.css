@@ -1,0 +1,308 @@
+
+*{
+    margin: 0;
+    font-family: Roboto, 'sans-serif';
+}
+
+
+.menu_admin {
+    background-color: #2e2e31;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu_admin > a, .menu_admin > p{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu_admin > h1 {
+    color: white;
+    font-size: 40px;
+}
+
+.menu_admin > input {
+    font-size: 20px;
+    width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3140b4;
+    color: white;
+
+}
+
+
+
+span {
+    color: #2d699e;
+}
+
+
+.ContainerNTC {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cabecalho_admin {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.btn_add_news{
+   padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+#ListAdm {
+    width: 85%;
+    text-align: center;
+}
+
+
+#ListAdm tr {
+    height: 40px;
+}
+
+#ListAdm td{
+    padding: 15px;
+}
+
+#ListAdm th {
+    padding: 10px;
+    margin: 10px;
+
+}
+
+#colunas {
+    background-color: gainsboro;
+    color: #555252;
+    font-size: 21px;
+}
+
+
+#ListAdm  td > a {
+    text-decoration: none;
+}
+
+#detailNotice > a {
+    color: black;
+}
+
+#btnEditar {
+    background-color: #2d699e;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+#btnExcluir {
+    background-color: #cd1818;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    color: white;
+    padding: 10px;
+}
+
+#detailNotice > a:hover{
+    color: blue;
+}
+
+
+.add {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.add form{
+    margin-top: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add > form > label {
+    color: #555252;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.helptext{
+    display: none;
+}
+
+.errorlist {
+    margin-bottom: 20px;
+}
+
+#id_is_active {
+    width: 25px;
+    float: right;
+    margin-top: -55px;
+    margin-left: 80px;
+}
+
+#id_is_staff {
+    width: 25px;
+    float: right;
+    margin-top: -55px;
+    margin-left: 250px;
+}
+
+#id_is_superuser{
+    width: 25px;
+    float: right;
+    margin-top: -55px;
+    margin-left: 308px;
+}
+
+
+.add > form > input {
+    height: 60px;
+    margin-bottom: 20px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.add > form > textarea {
+    height: 300px;
+    margin-bottom: 20px ;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.add > form > select {
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 60px;
+    font-size: 20px;
+}
+
+#btn_form {
+    background-color: seagreen;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#cabecalho_notice {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cabecalho_notice> h3 {
+    color: #5e5d5d;
+}
+
+#texto_noticia {
+    margin: 20px;
+    font-size: 25px;
+}
+
+#editOrDelNotice {
+    margin: 20px;
+}
+
+#editOrDelNotice > a {
+    text-decoration: none;
+}
+
+.delNotice {
+    margin: 20px;
+}
+
+.delNotice > input {
+    border: none;
+    margin-top: 10px;
+}
+
+#btnSair {
+    width: 120px;
+    background-color: #c60d0d;
+    color: white;
+    font-size: 20px;
+    border:none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#id_opiniao {
+   height: 300px;
+}
+
+#id_header_image{
+    border: none;
+    border-radius: 0;
+}
+
+#header_image-clear_id{
+    width: 20px;
+    margin-bottom: -45px;
+    margin-left: 95px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

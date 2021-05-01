@@ -1,0 +1,14 @@
+{% extends  'menu_admin.html' %}
+
+    {% block title%} ANTENADO - Editar Comentário {% endblock title %}
+
+    {% block models %}
+        <div class="add">
+            <h1>Editar Comentário: </h1>
+             <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+            <input type="submit" value="Salvar" id="btn_form">
+        </form>
+        </div>
+    {% endblock models %}

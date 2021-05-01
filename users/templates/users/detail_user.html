@@ -1,0 +1,23 @@
+{% extends 'menu_admin.html' %}
+
+    {% block title %} ANTENADO - Admin {% endblock title %}
+
+    {% block models %}
+        <div id="cabecalho_notice">
+            <h1>Detalhes do usuário: </h1>
+            <h3>Nome: {{ usuario.username }}</h3>
+            <h3>
+                Sobrenome: {% if usuario.last_name %} {{ usuario.last_name }} {% else %} Não possuí {% endif %}
+            </h3>
+            <h3>
+                Email: {% if usuario.email %} {{ usuario.email }} {% else %} Não possuí {% endif %}
+            </h3>
+            <h3>Permissões: {% if usuario.is_superuser %} Super Usuário {% else %} Usuário Comum {% endif %} </h3>
+        </div>
+
+        <div id="editOrDelNotice">
+            <a href="{% url 'edit_user' usuario.pk %}" id="btnEditar">Editar</a>
+            <a href="{% url 'delete_user' usuario.pk %}" id="btnExcluir">Excluir</a>
+        </div>
+
+    {% endblock models %}

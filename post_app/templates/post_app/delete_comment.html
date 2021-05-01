@@ -1,0 +1,14 @@
+{% extends  'menu_admin.html' %}
+
+    {% block title%} ANTENADO - Deletar Comentário {% endblock title %}
+
+    {% block models %}
+        <form action="" method="post" class="delNotice">
+            {% csrf_token %}
+            <h1>
+                Tem certeza que deseja apagar o comentário "{{ comentario.opiniao }}"
+                que foi feito por {{ comentario.cod_usuario }} na notícia "{{ comentario.cod_noticia }}" ?
+            </h1>
+            <input type="submit" value="Excluir" id="btnExcluir">
+        </form>
+    {% endblock models %}

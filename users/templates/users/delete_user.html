@@ -1,0 +1,11 @@
+{% extends 'menu_admin.html' %}
+
+    {% block title %} Antenado - Admin {% endblock title %}
+
+    {% block models %}
+        <form action="" method="post" class="delNotice">
+            {% csrf_token %}
+            <h1>Tem certeza que deseja excluir o usuário {{ user.username }} ?</h1>
+            <input type="submit" value="Excluir" id="btnExcluir">
+        </form>
+    {% endblock models %}

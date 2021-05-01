@@ -1,0 +1,22 @@
+
+{% extends 'menu_admin.html' %}
+
+    {% block title %} ANTENADO - Notícia {% endblock title %}
+
+    {% block models %}
+
+        <div id="cabecalho_notice" >
+            <h1>{{ noticia.titulo }}</h1>
+            <h3>{{ noticia.assunto }} - Criada por {{ noticia.author }} em {{ noticia.timestamp }}</h3>
+        </div>
+        <div id="texto_noticia">
+            <p>{{ noticia.texto }}</p>
+        </div>
+
+
+       <div id="editOrDelNotice">
+             <a href="{% url 'edit_notice' noticia.pk %}" id="btnEditar">Editar</a>
+             <a href="{% url 'delete_notice' noticia.pk %}" id="btnExcluir">Excluir</a>
+       </div>
+
+    {% endblock models %}

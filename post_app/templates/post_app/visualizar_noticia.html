@@ -1,0 +1,53 @@
+{% extends 'menu.html' %}
+
+
+    {% block title %} Antenado - Noticia  {% endblock title %}
+
+    {% block content %}
+        <div class="containerNoticia">
+            <div class="noticia">
+                <div class="cabecalho_noticia">
+                    <h1>{{ noticia.titulo }}</h1>
+                    <h3>{{ noticia.assunto }} - criada em {{ noticia.timestamp }} por {{ noticia.author }}</h3>
+                </div>
+
+                {% if noticia.header_image %}
+                    <div class="imgNotice">
+                        <img src="{{ noticia.header_image.url }}" alt="Imagem Noticia">
+                    </div>
+                {% endif %}
+
+                <div class="conteudoNoticia">
+                    <p>{{ noticia.texto }}</p>
+                </div>
+                
+                {% if not noticia.comments.all %}
+                   <div class="CommentsNotFound">
+                       <h2>Essa noticia ainda não possui comentários !</h2>
+                       <a href="{% url 'comentar_noticia' noticia.pk %}">
+                           <input type="button" value="Adicionar Comentário">
+                       </a>
+                   </div>
+                {% else %}
+                     <div class="BlockComments">
+                         <div class="CommentFound">
+                            <h2>Comentarios: {{ noticia.comments.all.count }}</h2>
+                               <a href="{% url 'comentar_noticia' noticia.pk %}">
+                                   <input type="button" value="Adicionar Comentário">
+                               </a>
+                         </div>
+                        {% for comentario in noticia.comments.all %}
+                            <div class="Comment">
+                                <img src="/static/imagens/default-user-img.jpg" alt="Imagem_Comentário">
+                                <div>
+                                    <h3>{{ comentario.cod_usuario }} - {{ comentario.timestamp }}</h3>
+                                    <h4>{{ comentario.opiniao }}</h4>
+                                </div>
+                            </div>
+                        {% endfor %}
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    {% endblock content %}

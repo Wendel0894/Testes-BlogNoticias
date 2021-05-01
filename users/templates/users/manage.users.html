@@ -1,0 +1,45 @@
+{% extends 'menu_admin.html' %}
+
+    {% block title %} ANTENADO - Admin {% endblock title %}
+
+    {% block models %}
+         <div class="ContainerNTC">
+
+            <div class="cabecalho_admin">
+                <h2>Usuários Cadastrados: <span> {{ usuarios | length }} </span></h2>
+                <a href="{% url 'add_user' %}">
+                    <input type="button" value="Adicionar" class="btn_add_news">
+                </a>
+            </div>
+
+            <table id="ListAdm">
+                <tr id="colunas">
+                    <th>Usuário</th>
+                    <th>Permissões</th>
+                    <th>Ultimo Login</th>
+                    <th>Data de criação</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+
+                {% for usuario in usuarios %}
+                <tr>
+                    <td id="detailNotice"><a href="{% url 'detail_user' usuario.pk %}">{{ usuario.username }}</a></td>
+                    <td>
+                        {% if usuario.is_superuser %}
+                            Super Usuário
+                        {% else %}
+                            Usuário Comum
+                        {% endif %}
+                    </td>
+                    <td>{{ usuario.last_login }}</td>
+                    <td>{{ usuario.date_joined }}</td>
+                    <td><a href="{% url 'edit_user' usuario.pk %}" id="btnEditar">Editar</a></td>
+                    <td><a href="{% url 'delete_user' usuario.pk %}" id="btnExcluir" >Excluir</a></td>
+
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endblock models %}

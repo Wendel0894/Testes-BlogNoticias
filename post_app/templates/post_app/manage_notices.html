@@ -1,0 +1,44 @@
+{% extends 'menu_admin.html' %}
+
+    {% block title %} ANTENADO - Admin {% endblock title %}
+
+    {% block models %}
+
+        <div class="ContainerNTC">
+
+            <div class="cabecalho_admin">
+                <h2>Noticias Cadastradas: <span> {{ notices_list | length }} </span></h2>
+                <a href="{% url 'add_notice' %}">
+                    <input type="button" value="Adicionar" class="btn_add_news">
+                </a>
+            </div>
+
+            <table id="ListAdm">
+
+                <tr id="colunas">
+                    <th>Notícia</th>
+                    <th>Assunto</th>
+                    <th>Autor</th>
+                    <th>Data de criação</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+
+                {% for noticia in notices_list %}
+                    <tr>
+
+                        <td id="detailNotice"><a href="{% url 'detail_notice' noticia.pk %}"> {{ noticia.titulo }}</a></td>
+                        <td>{{ noticia.assunto }}</td>
+                        <td>{{ noticia.author }}</td>
+                        <td>{{ noticia.timestamp }}</td>
+                        <td><a href="{% url 'edit_notice' noticia.pk %}" id="btnEditar" >Editar</a></td>
+                        <td><a href="{% url 'delete_notice' noticia.pk %}" id="btnExcluir">Excluir</a></td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+
+
+    {% endblock models %}

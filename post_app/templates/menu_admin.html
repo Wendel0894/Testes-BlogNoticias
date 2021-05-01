@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static '/css/manage.css' %}">
+</head>
+<body>
+
+    <nav class="menu_admin">
+        <h1>ANTENADO - Admin</h1>
+        <a href="{% url 'Home' %}">Home</a>
+        <a href="{% url 'manage_notices' %}">Noticias</a>
+        <a href="{% url 'manage_users' %}">Usuários</a>
+        <a href="{% url 'manage_comments' %}">Comentários</a>
+        <p>Olá, {{ user.username }} !</p>
+        <a href="{% url 'logout' %}">
+            <input type="button" value="Sair" id="btnSair">
+        </a>
+    </nav>
+
+    {% block models %}
+
+    {% endblock models %}
+
+
+</body>
+</html>

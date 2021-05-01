@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+</head>
+<body>
+
+    <nav class="menu">
+        <h1>Antenado</h1>
+        <a href="{% url 'Home' %}">Home</a>
+        <a href="{% url 'Saude' %}">Saúde</a>
+        <a href="{% url 'Tecnologia' %}">Tecnologia</a>
+        <a href="{% url 'Ciência' %}">Ciência</a>
+        <a href="{% url 'Esportes' %}">Esportes</a>
+        <div class="login">
+            {% if user.is_authenticated %}
+                <p>Olá, {{ user.username }} !</p>
+                {% if user.is_superuser %}
+                    <a href="{% url 'manage_notices' %}">
+                        <input type="button" value="Gerenciar" id="btnGerenciar">
+                    </a>
+                {% endif %}
+                <a href="{% url 'logout' %}">
+                     <input type="button" value="Sair" id="btnSair">
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}">
+                    <input type="button" value="Entrar" id="btnEntrar">
+                </a>
+                <a href="{% url 'cadastro' %}">
+                    <input type="button" value="Cadastrar" id="btnCadastrar">
+                </a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock content %}
+
+</body>
+</html>
+
+
+
