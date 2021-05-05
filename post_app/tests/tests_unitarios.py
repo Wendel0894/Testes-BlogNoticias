@@ -30,10 +30,16 @@ class NewsTestCase(TestCase):
         noticia = Noticia.objects.get(codigo=1)
         self.assertEquals(noticia.titulo, 'Titulo da Noticia')
 
+    # Testando se a imagem está vazia
+    def test_img_null(self):
+        img = Noticia.objects.get(header_image="")
+        self.assertEquals(img.header_image, "")
+
 
 # Teste em View
 class NewsViewTestCase(TestCase):
 
-    def test_status_200(self):
+    # View Existe
+    def test_home_status_200(self):
         response = self.client.get(reverse('Home'))
         self.assertEquals(response.status_code, 200)
