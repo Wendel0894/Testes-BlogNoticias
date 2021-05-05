@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Noticia
+from post_app.models import Noticia
 from django.contrib.auth.models import User
 
 # Create your tests here.
@@ -23,6 +23,7 @@ class NewsTestCase(TestCase): #Teste Unitário Cadastrar Noticia
             author=usuario,
         )
 
+    # Testando se a noticia foi realmente cadastrada
     def test_cadastrar_noticia(self):
         noticia = Noticia.objects.get(codigo=1)
         self.assertEquals(noticia.titulo, 'Titulo da Noticia')

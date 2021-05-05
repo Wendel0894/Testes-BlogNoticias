@@ -13,6 +13,7 @@ class UnitTestsUser(TestCase):
             password='123456'
         )
 
+    # Testanto se Usuario foi realmente cadastrado
     def test_cadastro_user(self):
         user = User.objects.get(username='Teste')
         self.assertEquals(user.username, 'Teste')
