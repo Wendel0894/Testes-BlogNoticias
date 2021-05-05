@@ -18,3 +18,8 @@ class UnitTestsUser(TestCase):
         user = User.objects.get(username='Teste')
         self.assertEquals(user.username, 'Teste')
 
+    # Testando tamanho minimo para a senha
+    def test_password(self):
+        t_password = User.objects.get(password='123456')
+        self.assertTrue(len(t_password.password) > 5)
+
