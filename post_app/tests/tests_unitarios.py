@@ -1,10 +1,12 @@
 from django.test import TestCase
 from post_app.models import Noticia
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your tests here.
 
-class NewsTestCase(TestCase): #Teste Unitário Cadastrar Noticia
+# Test em Model
+class NewsTestCase(TestCase):
 
     def setUp(self):
 
@@ -27,3 +29,11 @@ class NewsTestCase(TestCase): #Teste Unitário Cadastrar Noticia
     def test_cadastrar_noticia(self):
         noticia = Noticia.objects.get(codigo=1)
         self.assertEquals(noticia.titulo, 'Titulo da Noticia')
+
+
+# Teste em View
+class NewsViewTestCase(TestCase):
+
+    def test_status_200(self):
+        response = self.client.get(reverse('Home'))
+        self.assertEquals(response.status_code, 200)

@@ -18,5 +18,3 @@ class UnitTestsUser(TestCase):
         user = User.objects.get(username='Teste')
         self.assertEquals(user.username, 'Teste')
 
-
-
