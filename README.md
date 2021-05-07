@@ -27,6 +27,7 @@ pip install selenium
 ```
 ### Faça download do Chrome driver
 > Baixe [aqui](https://chromedriver.chromium.org/downloads) o chrome drive, descompacte o arquivo baixado, abra o terminal na pasta que contem o arquivo "chromedriver" cole o comando abaixo no terminal para mover o arquivo para o diretório **/usr/local/bin**.
+
 > **NOTA**: A versão do chrome driver deve ser a mesma do seu navegador!!!
 ```sh
 sudo mv chromedriver /usr/local/bin/
