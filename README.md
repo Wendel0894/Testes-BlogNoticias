@@ -4,15 +4,17 @@ Repositório para o projeto final da disciplina de Testes de software
 ## Instruções para execução dos teste de sistema com o Ubuntu/pop-os.
 **Pré-requisitos:** 
 > 1- Saber carregar e colocar para funcionar um projeto no django.
+
 > 2- Iniciar o ambiente virtual do django: "venv"
 ```sh
 source venv/bin/activate
 ```
->**3- Rodar o servidor do projeto.**
+>3- Rodar o servidor do projeto.
 ```sh
 python3 manage.py runserver
 ```
 > **4- Logar com a conta|** login: Zeca, senha: war99857133 
+
 > Necessário para rodar um dos testes.
 
 **Comando para iniciar o ambiente virtual no projeto**
