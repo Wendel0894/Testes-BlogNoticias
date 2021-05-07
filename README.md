@@ -6,6 +6,7 @@ Repositório para o projeto final da disciplina de Testes de software
 > 1- Saber carregar e colocar para funcionar um projeto no django.
 
 > 2- Iniciar o ambiente virtual do django: "venv"
+Comando para iniciar o ambiente virtual no projeto
 ```sh
 source venv/bin/activate
 ```
@@ -17,7 +18,7 @@ python3 manage.py runserver
 
 > Necessário para rodar um dos testes.
 
-**Comando para iniciar o ambiente virtual no projeto**
+
 ### Instalar o selenium
 > Execute o comando abaixo no terminal do projeto django.
 ```sh
